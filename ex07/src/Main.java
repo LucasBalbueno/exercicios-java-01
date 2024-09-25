@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
-    private static UndoService undo = new UndoService();
+    private static QueueService queueService = new QueueService();
 
     public static void main(String[] args) {
         while (true) {
-            System.out.println("Text Editor");
-            System.out.println("1. Add action");
-            System.out.println("2. Undo the last action");
-            System.out.println("3. Get all action");
+            System.out.println("Print Manager");
+            System.out.println("1. Add print job");
+            System.out.println("2. Processing next print job");
+            System.out.println("3. Get all prints job");
             System.out.println("4. Leave");
 
             int num = sc.nextInt();
@@ -17,17 +17,16 @@ public class Main {
 
             switch (num) {
                 case 1:
-                    System.out.println("Enter the action description");
-                    String action = sc.nextLine();
-                    undo.addAction(action);
+                    System.out.println("Enter the document name:");
+                    String document = sc.nextLine();
+                    Print print = new Print(document);
+                    queueService.addPrint(print);
                     break;
                 case 2:
-                    String undoAction = undo.undoAction();
-                    System.out.println("Action undo: " + undoAction);
+                    queueService.nextPrint();
                     break;
                 case 3:
-                    System.out.println("Actions history:");
-                    undo.getActions();
+                    queueService.getAllPrints();
                     break;
                 case 4:
                     System.out.println("Leaving...");

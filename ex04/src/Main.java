@@ -13,10 +13,10 @@ public class Main {
             System.out.println("4. Get all actions");
             System.out.println("5. Leave");
 
-            int choice = sc.nextInt();
+            int num = sc.nextInt();
             sc.nextLine();
 
-            switch (choice) {
+            switch (num) {
                 case 1:
                     System.out.println("Enter the action description");
                     String action = sc.nextLine();
