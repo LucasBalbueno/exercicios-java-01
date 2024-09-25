@@ -8,7 +8,7 @@ public class Main {
         int maxSize = sc.nextInt();
         sc.nextLine();
 
-        History historyItems = new History(maxSize);
+        HistoryService historyItems = new HistoryService(maxSize);
 
         while (true) {
             System.out.println("Management History");

@@ -1,9 +1,9 @@
-public class History {
+public class HistoryService {
     private Item head;
     private int size;
     private final int maxSize;
 
-    public History(int maxSize) {
+    public HistoryService(int maxSize) {
         this.head = null;
         this.size = 0;
         this.maxSize = maxSize;
